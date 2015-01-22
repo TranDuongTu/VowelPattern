@@ -6,16 +6,17 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="632.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="vn.elca.training.vowelpattern.controllers.MainSceneController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vn.elca.training.vowelpattern.controllers.MainSceneController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="208.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="185.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="208.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="208.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="185.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Label text="Same Vowel Pattern Detector" GridPane.columnSpan="2" GridPane.halignment="CENTER">
@@ -39,7 +40,7 @@
             <Insets left="32.0" right="64.0" />
          </GridPane.margin>
       </Label>
-      <TextField fx:id="firstTextField" prefHeight="35.0" prefWidth="262.0" GridPane.rowIndex="2">
+      <TextField fx:id="firstTextField" prefHeight="35.0" prefWidth="250.0" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets left="64.0" right="32.0" />
          </GridPane.margin>
@@ -49,7 +50,7 @@
             <Insets left="32.0" right="64.0" />
          </GridPane.margin>
       </TextField>
-      <Button fx:id="detectBtn" alignment="CENTER" mnemonicParsing="false" onAction="#handleDetectBtnAction" prefHeight="37.0" prefWidth="128.0" text="Detect" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+      <Button fx:id="detectBtn" alignment="CENTER" mnemonicParsing="false" onAction="#handleDetectBtnAction" prefHeight="37.0" prefWidth="128.0" text="Detect" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <font>
             <Font size="16.0" />
          </font>
@@ -57,7 +58,7 @@
             <Insets right="32.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="closeBtn" alignment="CENTER" mnemonicParsing="false" onAction="#handleCloseBtnAction" prefHeight="37.0" prefWidth="128.0" text="Close" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Button fx:id="closeBtn" alignment="CENTER" mnemonicParsing="false" onAction="#handleCloseBtnAction" prefHeight="37.0" prefWidth="128.0" text="Close" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <font>
             <Font size="16.0" />
          </font>
@@ -65,5 +66,10 @@
             <Insets left="32.0" />
          </GridPane.margin>
       </Button>
+      <Label fx:id="resultLabel" text="Result goes here" textFill="#f80606" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
    </children>
 </GridPane>

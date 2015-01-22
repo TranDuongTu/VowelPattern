@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import vn.elca.training.vowelpattern.services.exceptions.InvalidInputException;
 
@@ -14,6 +15,9 @@ public class MainSceneController extends Controller {
 	
 	@FXML
 	private Button detectBtn, closeBtn;
+	
+	@FXML
+	private Label resultLabel;
 	
 	// ========================================================================
 	// EVENT HANDLERS
@@ -30,9 +34,9 @@ public class MainSceneController extends Controller {
 		String s2 = secondTextField.getText();
 		
 		try {
-			alertResult(nlpService.sameVowelPatternOfLongWord(s1, s2));
+			showResult(nlpService.sameVowelPatternOfLongWord(s1, s2));
 		} catch (InvalidInputException ex) {
-			System.out.println("Invalid Input");
+			showError(ex.getMessage());
 		}
 	}
 	
@@ -40,7 +44,12 @@ public class MainSceneController extends Controller {
 	// PRIVATE HELPERS
 	// ========================================================================
 	
-	private void alertResult(boolean result) {
-		System.out.println("Result: " + result);
+	private void showResult(boolean result) {
+		resultLabel.setText(String.format("Two Strings %s same vowels pattern", 
+				result ? "had" : "didn't have"));
+	}
+	
+	private void showError(String message) {
+		resultLabel.setText("Invalid input: " + message);
 	}
 }
