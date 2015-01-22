@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+					   	http://www.springframework.org/schema/beans/spring-beans.xsd
+					   	http://www.springframework.org/schema/util
+    					http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+    					
+   	<!-- NLP Service -->
+   	<bean id="nlpService" class="vn.elca.training.vowelpattern.services.NLPService" />
+
+	<!-- Testing data -->
+	<bean id="test1" class="vn.elca.training.vowelpattern.utils.Testcase">
+		<property name="first" value="HORIDE" />
+		<property name="second" value="TOBRITE" />
+		<property name="expectedValue" value="true" />
+	</bean>
+	<bean id="test2" class="vn.elca.training.vowelpattern.utils.Testcase">
+		<property name="first" value="TRABAIGRAN" />
+		<property name="second" value="JAMAICA" />
+		<property name="expectedValue" value="true" />
+	</bean>
+	<bean id="test3" class="vn.elca.training.vowelpattern.utils.Testcase">
+		<property name="first" value="HANEMO" />
+		<property name="second" value="TENAMO" />
+		<property name="expectedValue" value="false" />
+	</bean>
+	<bean id="test4" class="vn.elca.training.vowelpattern.utils.Testcase">
+		<property name="first" value="HANEMO" />
+		<property name="second" value="TANEMU" />
+		<property name="expectedValue" value="false" />
+	</bean>
+	<bean id="test5" class="vn.elca.training.vowelpattern.utils.Testcase">
+		<property name="first" value="HANEMO" />
+		<property name="second" value="HANEMONI" />
+		<property name="expectedValue" value="false" />
+	</bean>
+	
+	<!-- List of basic (provided) test cases -->
+	<util:list id="basicTests" 	list-class="java.util.ArrayList"
+								value-type="vn.elca.training.vowelpattern.utils.Testcase">
+		<ref bean="test1" />
+		<ref bean="test2" />
+		<ref bean="test3" />
+		<ref bean="test4" />
+		<ref bean="test5" />
+	</util:list>
+</beans>
